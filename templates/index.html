@@ -50,11 +50,11 @@
     <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
       <!-- Navbar menu-->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Обо мне">Обо мне</a></li>
+        <li class="nav-item"><a class="nav-link" href="#резюме">Резюме</a></li>
+        <li class="nav-item"><a class="nav-link" href="#портфолио">Портфолио</a></li>
+        <li class="nav-item"><a class="nav-link" href="#блоги">Блоги</a></li>
+        <li class="nav-item"><a class="nav-link" href="#контакты">Контакты</a></li>
       </ul>
     </div>
   </nav>
@@ -210,7 +210,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="section-heading">
-                    <p class="section-description">What my clients think about me</p>
+                    <p class="section-description">Что мои клиенты думают обо мне</p>
                     <h2 class="section-title">Testimonials</h2>
                   </div>
                 </div>
@@ -228,7 +228,7 @@
                         </div>
                       </div><i class="icon ion-md-quote review-icon"></i>
                     </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
+                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
                   </div>
                 </div>
                 <div class="slider-item">
@@ -243,7 +243,7 @@
                         </div>
                       </div><i class="icon ion-md-quote review-icon"></i>
                     </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
+                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
                   </div>
                 </div>
                 <div class="slider-item">
@@ -258,7 +258,7 @@
                         </div>
                       </div><i class="icon ion-md-quote review-icon"></i>
                     </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
+                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
                   </div>
                 </div>
               </div>
@@ -268,8 +268,8 @@
               <div class="row">
                 <div class="col-12">
                   <div class="section-heading">
-                    <p class="section-description">Get started with my services</p>
-                    <h2 class="section-title">Choose a Plan</h2>
+                    <p class="section-description">Начните с моими сервисами</p>
+                    <h2 class="section-title">Выберите план</h2>
                   </div>
                 </div>
               </div>
@@ -277,42 +277,28 @@
                 <!-- Single plan-->
                 <div class="col-lg-4">
                   <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-md-egg"></i>
-                    <h3 class="plan-type">Standard</h3>
-                    <h2 class="plan-price">$19/month</h2>
+                    <h3 class="plan-type">Стандартный</h3>
+                    <h2 class="plan-price">$19/в месяц</h2>
                     <ul class="list-unstyled plan-list">
-                      <li>Mobile App Design</li>
+                      <li>Мобильный дизайнер</li>
                       <li>Responsive Design</li>
-                      <li>Database Development</li>
-                      <li>Web Design</li>
-                      <li>24/7 Support</li>
+                      <li>Разработчик БД</li>
+                      <li>Веб разработчик</li>
+                      <li>24/7 в сети</li>
                     </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Standard</a>
                   </div>
                 </div>
                 <!-- Single plan-->
                 <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-ios-rocket"></i>
-                    <h3 class="plan-type">Professional</h3>
-                    <h2 class="plan-price">$29/month</h2>
-                    <ul class="list-unstyled plan-list">
-                      <li>Mobile App Design</li>
-                      <li>Responsive Design</li>
-                      <li>Database Development</li>
-                      <li>Web Design</li>
-                      <li>24/7 Support</li>
-                    </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Pro</a>
-                  </div>
-                </div>
-                <!-- Single plan-->
-                <div class="col-lg-4">
                   <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-logo-ionic"></i>
-                    <h3 class="plan-type">Business</h3>
-                    <h2 class="plan-price">$39/month</h2>
+                    <h3 class="plan-type">Бизнес</h3>
+                    <h2 class="plan-price">$39/в месяц</h2>
                     <ul class="list-unstyled plan-list">
-                      <li>Mobile App Design</li>
+                      <li>Мобильный дизайнер</li>
                       <li>Responsive Design</li>
-                      <li>Database Development</li>
-                      <li>Web Design</li>
-                      <li>24/7 Support</li>
+                      <li>Разработчик БДt</li>
+                      <li>Веб разработчик</li>
+                      <li>24/7 в сети</li>
                     </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Business</a>
                   </div>
                 </div>
@@ -335,7 +321,7 @@
             <div class="row">
               <div class="col-12">
                 <div class="section-heading page-heading">
-                  <p class="section-description">Check out my Resume</p>
+                  <p class="section-description">Проверьте мои резюме</p>
                   <h2 class="section-title">Опыт работы</h2>
                   <div class="animated-bar"></div>
                 </div>
@@ -361,7 +347,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="section-heading">
-                    <p class="section-description">Мой уровень знаний в некоторых инструментах                    </p>
+                    <p class="section-description">Мой уровень знаний в некоторых инструментах</p>
                     <h2 class="section-title">Мои навыки
                     </h2>
                   </div>
@@ -483,7 +469,7 @@
                 <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="{% static 'img/item-3.jpg' %}" data-lightbox>
                     <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-3.jpg' %}">
                       <div class="item-content">
-                        <h6 class="content-title">Modern Bag Design</h6><span class="content-more">More Info</span>
+                        <h6 class="content-title">Modern Bag Design</h6><span class="content-more">Больше информации</span>
                       </div>
                     </div>
                   </a></div>
@@ -529,7 +515,7 @@
           <div class="lightbox-content">
             <div class="row">
               <div class="col-12">
-                <div class="section-heading page-heading">
+                <div class="section-heading page-heading"> 
                   <p class="section-description">Посмотрите на мои последние блоги!</p>
                   <h2 class="section-title">Мои блоги!</h2>
                   <div class="animated-bar"></div>

@@ -97,6 +97,25 @@ class Blogs(models.Model):
         max_length=255,
         verbose_name="Описание"
     )
-
+    class Meta:
+        verbose_name = "Блог"
+        verbose_name_plural = "Блоги"
+        
+class Portfolio(models.Model):
+    name = models.CharField(
+        max_length=55,
+        verbose_name="Имя"
+    )
     
+    about = models.CharField(
+        max_length=255,
+        verbose_name="О вас"
+    )
     
+    email = models.CharField(
+        max_length=50,
+        verbose_name="Эл.почта"
+    )
+    
+    class Meta:
+        verbose_name_plural = "Портфолио"
