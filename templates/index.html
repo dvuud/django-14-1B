@@ -79,11 +79,11 @@
       <!-- Social media icons-->
       <div class="fixed-block block-right">
         <ul class="list-unstyled social-icons">
-          <li><a href="#0"><i class="icon ion-logo-twitter"></i></a></li>
-          <li><a href="#0"><i class="icon ion-logo-facebook"></i></a></li>
-          <li><a href="#0"><i class="icon ion-logo-linkedin"></i></a></li>
-          <li><a href="#0"><i class="icon ion-logo-github"></i></a></li>
-          <li><a href="#0"><i class="icon ion-logo-instagram"></i></a></li>
+          <li><a href="{{infouser.youtube}}"><i class="icon ion-logo-youtube"></i></a></li>
+          <li><a href="{{infouser.instagram}}"><i class="icon ion-logo-instagram"></i></a></li>
+          <li><a href="{{infouser.telegram}}"><i class="icon ion-logo-telegram"></i></a></li>
+          <li><a href="{{infouser.whatsapp}}"><i class="icon ion-logo-whatsapp"></i></a></li>
+          <li><a href="{{infouser.facebook}}"><i class="icon ion-logo-facebook"></i></a></li>
         </ul>
       </div>
     </div>
@@ -526,32 +526,16 @@
             <div class="blog-section single-section">
               <div class="row justify-content-center">
                 <!-- Single post-->
+                {{%for blogs in blogs%}}
                 <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blogs.blog1}}" alt="Blog post"><span class="content-date">{{blogs.data1}}</span></a>
+                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blogs.blog1.url}}" alt="Blog post"><span class="content-date">{{blogs.data1}}</span></a>
                     <div class="card-body post-content"><a href="#0">
                       </a>
                       <p class="card-text content-description">{{blogs.description1}}</p>
                     </div>
                   </div>
+                  {{%endfor%}}
                 </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blogs.blog2}}" alt="Blog post"><span class="content-date">{{blogs.data2}}</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                      </a>
-                      <p class="card-text content-description">{{blogs.description2}}</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blogs.blogs3}}" alt="Blog post"><span class="content-date">{{blogs.data3}}</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                      </a>
-                      <p class="card-text content-description">{{blogs.description3}}</p>
-                    </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

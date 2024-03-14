@@ -24,6 +24,25 @@ class InfoUser(models.Model):
         max_length=50,
         verbose_name = "Ваша страна"
     )
+    youtube = models.URLField(
+        verbose_name = 'YouTube'
+    )
+    
+    instagram = models.URLField(
+        verbose_name = 'Instagram'
+    )
+    
+    whatsapp = models.URLField(
+        verbose_name = 'Whatsapp'
+    )
+    
+    telegram = models.URLField(
+        verbose_name = 'Telegram'
+    )
+    
+    facebook = models.URLField(
+    verbose_name = 'Facebook'
+    )
     
     class Meta:
         verbose_name = "Информация о пользователя"
@@ -76,24 +95,8 @@ class Blogs(models.Model):
         
     )
     data1 = models.DateField(verbose_name="Дата")
+    
     description1 = models.CharField(
-        max_length=255,
-        verbose_name="Описание"
-    )
-    blog2 = models.ImageField(
-        verbose_name="Ваш второй блог"
-        )
-    data2 = models.DateField(verbose_name="Дата")
-    description2 = models.CharField(
-        max_length=255,
-        verbose_name="Описание"
-    )
-    blog3 = models.ImageField(
-        verbose_name="Ваш третий блог"
-        
-    )
-    data3 = models.DateField(verbose_name="Дата")
-    description3 = models.CharField(
         max_length=255,
         verbose_name="Описание"
     )

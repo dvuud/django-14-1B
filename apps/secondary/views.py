@@ -10,6 +10,6 @@ def index(request):
     infouser = InfoUser.objects.latest("id")
     resume = Resume.objects.latest("id")
     experience = Experience.objects.latest("id")
-    blogs = Blogs.objects.latest("id")
+    blogs = Blogs.objects.all()
     portfolio = Portfolio.objects.latest("id")
     return render(request, "index.html", locals())
