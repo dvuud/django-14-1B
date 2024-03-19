@@ -1,7 +1,7 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
   <!-- Required meta tags-->
   <meta charset="utf-8">
@@ -11,13 +11,13 @@
   <meta name="description" content="Personal Portfolio Template">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href=" {% static 'img/favicons/apple-touch-icon.png' %}">
-  <link rel="icon" type="{% static 'image/png' %}" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %} ">
-  <link rel="icon" type="{% static 'image/png' %}" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %} ">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %}">
   <!-- Web fonts-->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800iamp;display=swap' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
   <!-- CSS vendors-->
-  <link rel="{% static 'stylesheet'%}" href="{% static 'css/bootstrap-custom.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap-custom.css' %}">
   <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}">
   <link rel="stylesheet" href="{% static 'css/lity.min.css' %}">
@@ -30,7 +30,7 @@
   <!-- Custom CSS (Add your custom CSS styles to this file)-->
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <!-- removeIf(customizerDist)-->
-  <link rel="stylesheet" href="customizer/main.css">
+  <link rel="stylesheet" href="../customizer/main.css">
   <!-- endremoveIf(customizerDist)-->
 </head>
 
@@ -50,11 +50,11 @@
     <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
       <!-- Navbar menu-->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#Обо мне">Обо мне</a></li>
-        <li class="nav-item"><a class="nav-link" href="#резюме">Резюме</a></li>
-        <li class="nav-item"><a class="nav-link" href="#портфолио">Портфолио</a></li>
-        <li class="nav-item"><a class="nav-link" href="#блоги">Блоги</a></li>
-        <li class="nav-item"><a class="nav-link" href="#контакты">Контакты</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -63,8 +63,8 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 col-lg-8 home-content text-center">
-          <h1 class="home-name">{{resume.full_name}}</span></h1>
-          <h4 class="cd-headline clip home-headline">Я <span class="cd-words-wrapper single-headline"><b class="is-visible">Разработчик</b><b>Дизайнер</b></b></span></h4>
+          <h1 class="home-name">{{userinfo.name}} <span>{{userinfo.lastname}}</span></h1>
+          <h4 class="cd-headline clip home-headline">I’m a <span class="cd-words-wrapper single-headline"><b class="is-visible">{{userinfo.job}}</b><b>{{userinfo.job}}</b><b>{{userinfo.job}}</b></span></h4>
         </div>
       </div>
     </div>
@@ -79,11 +79,11 @@
       <!-- Social media icons-->
       <div class="fixed-block block-right">
         <ul class="list-unstyled social-icons">
-          <li><a href="{{infouser.youtube}}"><i class="icon ion-logo-youtube"></i></a></li>
-          <li><a href="{{infouser.instagram}}"><i class="icon ion-logo-instagram"></i></a></li>
-          <li><a href="{{infouser.telegram}}"><i class="icon ion-logo-telegram"></i></a></li>
-          <li><a href="{{infouser.whatsapp}}"><i class="icon ion-logo-whatsapp"></i></a></li>
-          <li><a href="{{infouser.facebook}}"><i class="icon ion-logo-facebook"></i></a></li>
+          <li><a href="{{userinfo.twitter}}"><i class="icon ion-logo-twitter"></i></a></li>
+          <li><a href="{{userinfo.facebook}}"><i class="icon ion-logo-facebook"></i></a></li>
+          <li><a href="{{userinfo.linkedin}}"><i class="icon ion-logo-linkedin"></i></a></li>
+          <li><a href="{{userinfo.github}}"><i class="icon ion-logo-github"></i></a></li>
+          <li><a href="{{userinfo.instagram}}"><i class="icon ion-logo-instagram"></i></a></li>
         </ul>
       </div>
     </div>
@@ -101,7 +101,7 @@
               <div class="col-12">
                 <div class="section-heading page-heading">
                   <p class="section-description">Get to know me</p>
-                  <h2 class="section-title">Обо мне</h2>
+                  <h2 class="section-title">About Me</h2>
                   <div class="animated-bar"></div>
                 </div>
               </div>
@@ -110,40 +110,40 @@
             <div class="info-section single-section">
               <div class="row align-items-center">
                 <!-- Picture part-->
-                <div class="{% static 'col-12 col-lg-5 info-img' %}"><img class="{% static 'img-fluid img-thumbnail" src="img/info-img.jpg' %}" alt="About Picture"></div>
+                <div class="col-12 col-lg-5 info-img"><img class="img-fluid img-thumbnail" src="{{userinfo.image.url}}" alt="About Picture"></div>
                 <!-- Content part-->
                 <div class="col-12 col-lg-7 info-content">
                   <div class="content-block">
-                    <h2 class="content-subtitle">Кто я такой?</h2>
-                    <h6 class="content-title">Я {{infouser.name}}, я являюсь Backend разработчиком!</h6>
+                    <h2 class="content-subtitle">Who am i?</h2>
+                    <h6 class="content-title">I'm {{userinfo.name}} {{userinfo.lastname}}, a {{userinfo.job}}</h6>
                     <div class="content-description">
-                      <p>{{infouser.description}}</p>
+                      <p>{{userinfo.description}}</p>
                     </div>
                     <address class="content-info">
                       <div class="row">
-                        <div class="col-12 col-md-6 single-info"><span>Имя:</span>
-                          <p>{{infouser.name}}</p>
+                        <div class="col-12 col-md-6 single-info"><span>Name:</span>
+                          <p>{{userinfo.name}} {{userinfo.lastname}}</p>
                         </div>
-                        <div class="col-12 col-md-6 single-info"><span>Эл.почта:</span>
-                          <p><a href="mailto:emma@example.com">{{infouser.email}}</a></p>
+                        <div class="col-12 col-md-6 single-info"><span>Email:</span>
+                          <p><a href="mailto:{{userinfo.email}}">{{userinfo.email}}</a></p>
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-12 col-md-6 single-info"><span>Возраст:</span>
-                          <p>{{infouser.age}}</p>
+                        <div class="col-12 col-md-6 single-info"><span>Age:</span>
+                          <p>{{userinfo.age}}</p>
                         </div>
-                        <div class="col-12 col-md-6 single-info"><span>Страна:</span>
-                          <p>{{infouser.country}}</p>
+                        <div class="col-12 col-md-6 single-info"><span>From:</span>
+                          <p>{{userinfo.address}}</p>
                         </div>
                       </div>
                     </address>
                     <div class="d-block d-sm-flex align-items-center"><a class="btn content-download button-main button-scheme" href="#0" role="button">Download CV</a>
                       <ul class="list-unstyled list-inline content-follow">
-                        <li class="list-inline-item"><a href="#0"><i class="icon ion-logo-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#0"><i class="icon ion-logo-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#0"><i class="icon ion-logo-linkedin"></i></a></li>
-                        <li class="list-inline-item"><a href="#0"><i class="icon ion-logo-github"></i></a></li>
-                        <li class="list-inline-item"><a href="#0"><i class="icon ion-logo-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="{{userinfo.twitter}}"><i class="icon ion-logo-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="{{userinfo.facebook}}"><i class="icon ion-logo-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="{{userinfo.linkedin}}"><i class="icon ion-logo-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="{{userinfo.github}}"><i class="icon ion-logo-github"></i></a></li>
+                        <li class="list-inline-item"><a href="{{userinfo.instagram}}"><i class="icon ion-logo-instagram"></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -161,106 +161,17 @@
                 </div>
               </div>
               <div class="row">
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-css3"></i>
-                    <h6 class="service-title">Design Trends</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
+                {% for service in service %}
                 <!-- Single service-->
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="single-service"><i class="icon service-icon ion-md-images"></i>
-                    <h6 class="service-title">PSD Design</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <h6 class="service-title">{{service.title}}</h6>
+                    <p class="service-description">{{service.description}}</p>
                   </div>
                 </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-ionic"></i>
-                    <h6 class="service-title">Customer Support</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-wordpress"></i>
-                    <h6 class="service-title">Web Development</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-md-move"></i>
-                    <h6 class="service-title">Fully Responsive</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-ios-rocket"></i>
-                    <h6 class="service-title">Branding</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
-            <!-- Testimonials section-->
-            <div class="testimonials-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <p class="section-description">Что мои клиенты думают обо мне</p>
-                    <h2 class="section-title">Testimonials</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="my-slider">
-                <div class="slider-item">
-                  <!-- Single review-->
-                  <div class="single-review swiper-slide">
-                    <div class="review-header d-flex justify-content-between">
-                      <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{% static 'img/client-1.jpg' %}" alt="Client">
-                          <div class="client-details">
-                            <h6 class="client-name">Julia Sakura</h6><span class="client-role">Envato Customer</span>
-                          </div>
-                        </div>
-                      </div><i class="icon ion-md-quote review-icon"></i>
-                    </div>
-                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
-                  </div>
-                </div>
-                <div class="slider-item">
-                  <!-- Single review-->
-                  <div class="single-review swiper-slide">
-                    <div class="review-header d-flex justify-content-between">
-                      <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src=+"{% static 'img/client-2.jpg' %}" alt="Client">
-                          <div class="client-details">
-                            <h6 class="client-name">John Santana</h6><span class="client-role">Entrepreneur</span>
-                          </div>
-                        </div>
-                      </div><i class="icon ion-md-quote review-icon"></i>
-                    </div>
-                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
-                  </div>
-                </div>
-                <div class="slider-item">
-                  <!-- Single review-->
-                  <div class="single-review swiper-slide">
-                    <div class="review-header d-flex justify-content-between">
-                      <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{% static 'img/client-3.jpg' %}" alt="Client">
-                          <div class="client-details">
-                            <h6 class="client-name">Maria Wilson</h6><span class="client-role">Envato Customer</span>
-                          </div>
-                        </div>
-                      </div><i class="icon ion-md-quote review-icon"></i>
-                    </div>
-                    <p class="review-content">{{infouser.name}} did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
-                  </div>
-                </div>
               </div>
             </div>
             <!-- Pricing section-->
@@ -268,8 +179,8 @@
               <div class="row">
                 <div class="col-12">
                   <div class="section-heading">
-                    <p class="section-description">Начните с моими сервисами</p>
-                    <h2 class="section-title">Выберите план</h2>
+                    <p class="section-description">Get started with my services</p>
+                    <h2 class="section-title">Choose a Plan</h2>
                   </div>
                 </div>
               </div>
@@ -277,28 +188,42 @@
                 <!-- Single plan-->
                 <div class="col-lg-4">
                   <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-md-egg"></i>
-                    <h3 class="plan-type">Стандартный</h3>
-                    <h2 class="plan-price">$19/в месяц</h2>
+                    <h3 class="plan-type">Standard</h3>
+                    <h2 class="plan-price">$19/month</h2>
                     <ul class="list-unstyled plan-list">
-                      <li>Мобильный дизайнер</li>
+                      <li>Mobile App Design</li>
                       <li>Responsive Design</li>
-                      <li>Разработчик БД</li>
-                      <li>Веб разработчик</li>
-                      <li>24/7 в сети</li>
+                      <li>Database Development</li>
+                      <li>Web Design</li>
+                      <li>24/7 Support</li>
                     </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Standard</a>
                   </div>
                 </div>
                 <!-- Single plan-->
                 <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-logo-ionic"></i>
-                    <h3 class="plan-type">Бизнес</h3>
-                    <h2 class="plan-price">$39/в месяц</h2>
+                  <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-ios-rocket"></i>
+                    <h3 class="plan-type">Professional</h3>
+                    <h2 class="plan-price">$29/month</h2>
                     <ul class="list-unstyled plan-list">
-                      <li>Мобильный дизайнер</li>
+                      <li>Mobile App Design</li>
                       <li>Responsive Design</li>
-                      <li>Разработчик БДt</li>
-                      <li>Веб разработчик</li>
-                      <li>24/7 в сети</li>
+                      <li>Database Development</li>
+                      <li>Web Design</li>
+                      <li>24/7 Support</li>
+                    </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Pro</a>
+                  </div>
+                </div>
+                <!-- Single plan-->
+                <div class="col-lg-4">
+                  <div class="single-plan mb-4 mb-sm-5"><i class="plan-icon icon ion-logo-ionic"></i>
+                    <h3 class="plan-type">Business</h3>
+                    <h2 class="plan-price">$39/month</h2>
+                    <ul class="list-unstyled plan-list">
+                      <li>Mobile App Design</li>
+                      <li>Responsive Design</li>
+                      <li>Database Development</li>
+                      <li>Web Design</li>
+                      <li>24/7 Support</li>
                     </ul><a class="btn button-main button-scheme plan-btn" href="#0" role="button">Get Business</a>
                   </div>
                 </div>
@@ -321,8 +246,8 @@
             <div class="row">
               <div class="col-12">
                 <div class="section-heading page-heading">
-                  <p class="section-description">Проверьте мои резюме</p>
-                  <h2 class="section-title">Опыт работы</h2>
+                  <p class="section-description">Check out my Resume</p>
+                  <h2 class="section-title">Resume</h2>
                   <div class="animated-bar"></div>
                 </div>
               </div>
@@ -330,14 +255,28 @@
             <!-- Resume section-->
             <div class="resume-section single-section">
               <div class="row">
+                <!-- Education part-->
+                <div class="col-12 col-md-6">
+                  <div class="col-block education">
+                    <h3 class="col-title">Education</h3>
+                    {% for educations in educations %}
+                    <div class="resume-item"><span class="item-arrow"></span>
+                      <h5 class="item-title">{{educations.title}}</h5><span class="item-details">{{educations.place}} / {{educations.year}}</span>
+                      <p class="item-description">{{educations.subtitle}}</p>
+                    </div>
+                    {% endfor %}  
+                  </div>
+                </div>
                 <!-- Experience part-->
                 <div class="col-12 col-md-6">
                   <div class="col-block experience">
-                    <h3 class="col-title">Опыт
+                    <h3 class="col-title">Experience</h3>
+                    {% for experience in experience %}
                     <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">{{experience.experience1}}</h5><span class="item-details">{{experience.work_company}}</span>
-                      <p class="item-description">{{experience.description}}</p>
+                      <h5 class="item-title">{{experience.title}}</h5><span class="item-details">{{experience.place}} / {{experience.year}}</span>
+                      <p class="item-description">{{experience.subtitle}}</p>
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -347,53 +286,33 @@
               <div class="row">
                 <div class="col-12">
                   <div class="section-heading">
-                    <p class="section-description">Мой уровень знаний в некоторых инструментах</p>
-                    <h2 class="section-title">Мои навыки
-                    </h2>
+                    <p class="section-description">My level of knowledge in some tools</p>
+                    <h2 class="section-title">My Skills</h2>
                   </div>
                 </div>
               </div>
               <div class="row">
+                {% for skills in skills %}
+                {% if skills.id %}
                 <div class="col-12 col-md-6">
-                  <div class="single-skill" data-percentage="95">
-                    <div class="skill-info"><span class="skill-name">HTML/CSS</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="80">
-                    <div class="skill-info"><span class="skill-name">Web Design</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="90">
-                    <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-percentage"></span></div>
+                  <div class="single-skill" data-percentage="{{skills.percent}}">
+                    <div class="skill-info"><span class="skill-name">{{skills.lang}}</span><span class="skill-percentage"></span></div>
                     <div class="progress skill-progress">
                       <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
+                {% else %}
                 <div class="col-12 col-md-6">
-                  <div class="single-skill" data-percentage="90">
-                    <div class="skill-info"><span class="skill-name">React JS</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="95">
-                    <div class="skill-info"><span class="skill-name">Express.js</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="80">
-                    <div class="skill-info"><span class="skill-name">TypeScript</span><span class="skill-percentage"></span></div>
+                  <div class="single-skill" data-percentage="{{skills.percent}}">
+                    <div class="skill-info"><span class="skill-name">{{skills.lang}}</span><span class="skill-percentage"></span></div>
                     <div class="progress skill-progress">
                       <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
+                {% endif %}
+                {% endfor %}
               </div>
             </div>
             <!-- Video section-->
@@ -401,10 +320,9 @@
               <div class="row align-items-center">
                 <div class="col-12 col-lg-6 content-part">
                   <h3 class="video-title">Take a tour of my office</h3>
-                  <p class="video-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia cum quasi assumenda culpa praesentium consectetur voluptatibus expedita. Voluptatem tempore, aspernatur rem facilis, distinctio nemo! Odio velit, nemo dolorem voluptas!</p>
-                  <p class="video-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium qui aspernatur unde mollitia, in laborum.</p>
+                  <p class="video-description">{{office.description}}</p>
                 </div>
-                <div class="col-12 col-lg-6 video-part"><a class="media-lightbox" href="https://www.youtube.com/watch?v=doteMqP6eSc" data-lightbox>
+                <div class="col-12 col-lg-6 video-part"><a class="media-lightbox" href="{{office.image}}" data-lightbox>
                     <div class="embed-responsive embed-responsive-16by9">
                       <div class="embed-responsive-item element-cover-bg"><span class="play-wrapper"><i class="icon ion-md-play"></i></span></div>
                     </div>
@@ -450,53 +368,15 @@
               <!-- Thumbnail list-->
               <div class="portfolio-grid row">
                 <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="{% static 'img/item-1.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-1.jpg' %}">
+                {% for portfolio in portfolio %}
+                <div class="single-item col-6 col-lg-4 {{portfolio.choosing}}"><a class="portfolio-item" href="{{portfolio.image.url}}" data-lightbox>
+                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{{portfolio.image.url}}">
                       <div class="item-content">
-                        <h6 class="content-title">Label Tag Mockup</h6><span class="content-more">More Info</span>
+                        <h6 class="content-title">{{portfolio.title}}</h6><span class="content-more">More Info</span>
                       </div>
                     </div>
                   </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 photos"><a class="portfolio-item" href="{% static 'img/item-2.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-2.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">3D Bag Mockup</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="{% static 'img/item-3.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-3.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Modern Bag Design</h6><span class="content-more">Больше информации</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 brand"><a class="portfolio-item" href="{% static 'img/item-4.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-4.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Coffee Cup Design</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 brand"><a class="portfolio-item" href="{% static 'img/item-5.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="img/item-5.jpg">
-                      <div class="item-content">
-                        <h6 class="content-title">T-Shirt Design</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 photos"><a class="portfolio-item" href="{% static 'img/item-6.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-6.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Packaging Box Mockup</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -515,9 +395,9 @@
           <div class="lightbox-content">
             <div class="row">
               <div class="col-12">
-                <div class="section-heading page-heading"> 
-                  <p class="section-description">Посмотрите на мои последние блоги!</p>
-                  <h2 class="section-title">Мои блоги!</h2>
+                <div class="section-heading page-heading">
+                  <p class="section-description">Check out my latest blog posts</p>
+                  <h2 class="section-title">My Blog</h2>
                   <div class="animated-bar"></div>
                 </div>
               </div>
@@ -526,17 +406,17 @@
             <div class="blog-section single-section">
               <div class="row justify-content-center">
                 <!-- Single post-->
-                {{%for blogs in blogs%}}
+                {% for blog in blog %}
                 <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blogs.blog1.url}}" alt="Blog post"><span class="content-date">{{blogs.data1}}</span></a>
+                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blog.image.url}}" alt="Blog post"><span class="content-date">{{blog.data}}</span></a>
                     <div class="card-body post-content"><a href="#0">
+                        <h5 class="card-title content-title">{{blog.title}}</h5>
                       </a>
-                      <p class="card-text content-description">{{blogs.description1}}</p>
+                      <p class="card-text content-description">{{blog.description}}</p>
                     </div>
                   </div>
-                  {{%endfor%}}
                 </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -556,9 +436,8 @@
             <div class="row">
               <div class="col-12">
                 <div class="section-heading page-heading">
-                  <p class="section-description">Не стесняйтесь обращаться ко мне отвечу в любое время!
-                  </p>
-                  <h2 class="section-title">Связаться</h2>
+                  <p class="section-description">Feel free to contact me anytimes</p>
+                  <h2 class="section-title">Get in Touch</h2>
                   <div class="animated-bar"></div>
                 </div>
               </div>
@@ -569,7 +448,7 @@
                 <!-- Contact form-->
                 <div class="col-12 col-lg-7">
                   <form class="contact-form" id="contact-form" action="php/contact.php">
-                    <h4 class="content-title">Напишите мне</h4>
+                    <h4 class="content-title">Message Me</h4>
                     <div class="row">
                       <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-name" type="text" name="name" placeholder="Name" required=""></div>
                       <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email" type="email" name="email" placeholder="Email" required=""></div>
@@ -584,34 +463,34 @@
                 <!-- Contact info-->
                 <div class="col-12 col-lg-5">
                   <div class="contact-info">
-                    <h4 class="content-title">Информация обо мне</h4>
-                    <p class="info-description">Всегда доступен для внештатной работы, если появится подходящий проект. Не стесняйтесь обращаться ко мне!</p>
+                    <h4 class="content-title">Contact Info</h4>
+                    <p class="info-description">Always available for freelance work if the right project comes along, Feel free to contact me!</p>
                     <ul class="list-unstyled list-info">
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-logo-ionic"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Имя</h6><span class="info-value">{{resume.full_name}}</span>
+                            <h6 class="info-type">Name</h6><span class="info-value">{{userinfo.name}} {{userinfo.lastname}}</span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-map"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Моя локация</h6><span class="info-value">{{resume.location}}</span>
+                            <h6 class="info-type">Location</h6><span class="info-value">{{userinfo.location}}</span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-call"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Мой номер</h6><span class="info-value"><a href="{{resume.number}}">{{resume.number}}</a></span>
+                            <h6 class="info-type">Call Me</h6><span class="info-value"><a href="tel:+441632967704">{{userinfo.phone_number}}</a></span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-send"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Электронная почта</h6><span class="info-value"><a href="{{resume.email}}">{{resume.email}}</a></span>
+                            <h6 class="info-type">Email Me</h6><span class="info-value"><a href="mailto:{{userinfo.email}}">{{userinfo.email}}</a></span>
                           </div>
                         </div>
                       </li>
@@ -676,7 +555,7 @@
   <!-- Custom JS (Add your custom JS scripts to this file)-->
   <script src="{% static 'js/custom.js' %}"></script>
   <!-- removeIf(customizerDist)-->
-  <script src="{% static 'customizer/main.js' %}"></script>
+  <script src="../customizer/main.js"></script>
   <!-- endremoveIf(customizerDist)-->
 </body>
 
